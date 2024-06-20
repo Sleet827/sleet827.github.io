@@ -84,9 +84,10 @@ p {
 }
 
 .firework {
-    font-size: 5rem;
+    font-size: 15rem;
     color: red;
     animation: fireworks 1s infinite alternate;
+    font-weight: bolder;
 }
 
 @keyframes fireworks {
