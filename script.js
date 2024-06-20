@@ -1,12 +1,13 @@
 window.onload = function() {
-    var audio = document.getElementById('romanticAudio');
-    audio.volume = 0.5;
-    
-    audio.addEventListener('canplaythrough', function() {
-        console.log("Audio can play through.");
+    // Fireworks animation
+    var fireworks = document.querySelectorAll('.firework');
+    fireworks.forEach((firework, index) => {
+        firework.style.animationDelay = `${index * 0.5}s`;
     });
 
-    audio.addEventListener('error', function(e) {
-        console.error("Error loading audio: ", e);
+    // Hearts animation
+    var hearts = document.querySelectorAll('.heart');
+    hearts.forEach((heart, index) => {
+        heart.style.animationDelay = `${index * 1}s`;
     });
 };
