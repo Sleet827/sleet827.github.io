@@ -1,58 +1,74 @@
-body {
-    font-family: Arial, sans-serif;
+body, html {
     margin: 0;
-    background-image: url("https://images.unsplash.com/photo-1488540314531-4e38f7e42d4b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdhdGl2ZXwlNWR4OGY4NmEwfHx8fA&auto=format&fit=crop&w=1350&q=80"); /* Replace with your desired background image URL */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
 }
 
 .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    color: white;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('background.jpg') no-repeat center center/cover;
+    filter: blur(5px);
+    z-index: 1;
+    animation: zoomIn 30s infinite alternate;
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 3rem;
     margin-bottom: 20px;
+    animation: textGlow 2s ease-in-out infinite alternate;
 }
 
-.hearts {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-}
-
-.heart {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    position: absolute;
-    animation-name: move;
-    animation-duration: 3s; /* Adjust animation duration for bounce effect */
-    animation-iteration-count: infinite;
-    background-color: #e0245e;
-}
-
-.heart:nth-child(2) {
-    animation-delay: 1s;
-}
-
-.heart:nth-child(3) {  
-    animation-delay: 2s;
-}
-
-@keyframes move {
+@keyframes textGlow {
     0% {
-        transform: translateY(0);
-    }
-    50% { /* Adjust these values to control bounce height */
-        transform: translateY(-30px);
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     }
     100% {
-        transform: translateY(0);
+        text-shadow: 0 0 20px rgba(255, 255, 255, 1);
     }
+}
+
+p {
+    font-size: 1.5rem;
 }
