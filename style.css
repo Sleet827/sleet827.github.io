@@ -1,11 +1,13 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
+    background-image: url("https://images.unsplash.com/photo-1488540314531-4e38f7e42d4b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdhdGl2ZXwlNWR4OGY4NmEwfHx8fA&auto=format&fit=crop&w=1350&q=80"); /* Replace with your desired background image URL */
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f0f0;
 }
 
 .container {
@@ -30,7 +32,7 @@ h1 {
     border-radius: 50%;
     position: absolute;
     animation-name: move;
-    animation-duration: 5s;
+    animation-duration: 3s; /* Adjust animation duration for bounce effect */
     animation-iteration-count: infinite;
     background-color: #e0245e;
 }
@@ -39,7 +41,7 @@ h1 {
     animation-delay: 1s;
 }
 
-.heart:nth-child(3) {
+.heart:nth-child(3) {  
     animation-delay: 2s;
 }
 
@@ -47,8 +49,8 @@ h1 {
     0% {
         transform: translateY(0);
     }
-    50% {
-        transform: translateY(-50px);
+    50% { /* Adjust these values to control bounce height */
+        transform: translateY(-30px);
     }
     100% {
         transform: translateY(0);
