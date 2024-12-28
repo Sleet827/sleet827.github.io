@@ -1,4 +1,4 @@
-document.getElementById('snowflakeBtn').addEventListener('click', function() -> {
+document.getElementById('snowflakeBtn').addEventListener('click', () => {
     const snowflake = document.createElement('div');
     snowflake.classList.add('snowflake');
     const size = Math.random() * 10 + 5;
