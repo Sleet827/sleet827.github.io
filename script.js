@@ -1,7 +1,4 @@
-document.getElementById('snowflakeBtn').addEventListener('click', createSnowflake());
-
-// Snowflake generation
-function createSnowflake() {
+document.getElementById('snowflakeBtn').addEventListener('click', function() -> {
     const snowflake = document.createElement('div');
     snowflake.classList.add('snowflake');
     const size = Math.random() * 10 + 5;
@@ -11,8 +8,7 @@ function createSnowflake() {
     snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
     document.querySelector('.snow').appendChild(snowflake);
 
-    // Remove snowflake after it falls
     snowflake.addEventListener('animationend', () => {
         snowflake.remove();
     });
-}
+});
