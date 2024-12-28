@@ -12,3 +12,13 @@ document.getElementById('snowflakeBtn').addEventListener('click', () => {
         snowflake.remove();
     });
 });
+
+document.getElementById('resetBtn').addEventListener('click', () => {
+    let snow = document.querySelector('.snow');
+    let snowflake = snow.lastElementChild;
+
+    while (snowflake) {
+        snow.removeChild(snowflake);
+        snowflake = snow.lastElementChild;
+    }
+});
